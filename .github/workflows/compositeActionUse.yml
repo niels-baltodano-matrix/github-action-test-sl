@@ -16,3 +16,5 @@ jobs:
         with:
           registry_username: ${{secrets.REGISTRY_USERNAME}}
           registry_password: ${{secrets.REGISTRY_PASWORD}}
+          image_name: alpine-SL-github
+          tag: $GITHUB_RUN_NUMBER
