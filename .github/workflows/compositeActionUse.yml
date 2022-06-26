@@ -1,4 +1,4 @@
-name: "Use the composite v2"
+name: Use the Composite Action with Actions
 
 on:
   workflow_dispatch:
@@ -6,15 +6,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Do anything
-        run: printenv
-      - name: Build and push the image
+
+      - name: Do anything elsee
+        run: echo Pretend to do other things 
+
+      # Uses the Composite Action
+      - name: Build and Push the image
         uses: niels-baltodano-matrix/github-actions-shared-libraries@main
         with:
           registry_username: ${{secrets.REGISTRY_USERNAME}}
-          registry_password: ${{secrets.REGISTRY_PASWORD}}
-          image_name: alpine-SL-github
+          registry_password: ${{secrets.REGISTRY_PASSWORD}}
+          image_name: alpine-3-gasl
           tag: $GITHUB_RUN_NUMBER
